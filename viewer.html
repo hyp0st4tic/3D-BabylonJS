@@ -24,7 +24,29 @@
         <script src="https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
   </head>
   <body>
-    <babylon extends="minimal" model="https://assets.babylonjs.com/meshes/village.glb"></babylon>
+
+    <div id="holder"><canvas id="renderCanvas" touch-action="none"><babylon extends="minimal" id="myViewer"></babylon></canvas></div>
+
+    <style>
+      #holder {
+          width: 80%;
+          height: 100%;
+          float: left;
+      }</style>
+
+    <script>
+      BabylonViewer.viewerManager.getViewerPromiseById('myViewer').then((viewer) => {
+          viewer.onSceneInitObservable.add(() => {
+              viewer.sceneManager.camera.radius = 15; //set camera radius
+              viewer.sceneManager.camera.beta = Math.PI / 2.2; //angle of depression
+          });
+          viewer.onEngineInitObservable.add((scene) => {
+              viewer.loadModel({
+                  url: "path to model file"
+              });
+          });
+      });
+  </script>
 
   </body>
 </html>
