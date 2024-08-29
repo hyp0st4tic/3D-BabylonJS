@@ -25,14 +25,9 @@
   </head>
   <body>
 
-    <div id="holder"><canvas id="renderCanvas" touch-action="none"><babylon extends="minimal" id="myViewer"></babylon></canvas></div>
+    <babylon extends="minimal" id="myViewer"></babylon>
 
-    <style>
-      #holder {
-          width: 80%;
-          height: 100%;
-          float: left;
-      }</style>
+
 
     <script>
       BabylonViewer.viewerManager.getViewerPromiseById('myViewer').then((viewer) => {
@@ -42,7 +37,7 @@
           });
           viewer.onEngineInitObservable.add((scene) => {
               viewer.loadModel({
-                  url: "path to model file"
+                  url: "https://assets.babylonjs.com/meshes/village.glb"
               });
           });
       });

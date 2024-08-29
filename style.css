@@ -1,6 +1,5 @@
 babylon {
-  width: 1000px;
-  height: 1000px;
-  align-items: center;
-  text-align: center;
+  height: 100%;
+  width: 90%;
+  float: left;
 }
