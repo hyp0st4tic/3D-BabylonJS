@@ -1,10 +1,6 @@
-body {
-  
-}
-
 babylon {
-  width: 500px;
-  height: 500px;
+  width: 1000px;
+  height: 1000px;
   align-items: center;
   text-align: center;
 }
